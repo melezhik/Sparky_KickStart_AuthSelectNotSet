@@ -9,16 +9,18 @@ to Sparky test
 ```
 [task run: task.bash - tasks/test]
 [task stdout]
-13:59:36 :: /usr/bin/authselect
-13:59:36 :: Profile ID: local
-13:59:36 :: Enabled features: None
-13:59:36 :: 
+15:00:16 :: test1 /usr/bin/authselect
+15:00:16 :: test2 Profile ID: local
+15:00:16 :: Enabled features: None
+15:00:16 :: 
 [task check]
 # Test authselect default profile
 # authselect is installed
-stdout match (s) </usr/bin/authselect> True
-# default authselect configuration is detected"
-stdout match (s) <Profile ID: local> True
+stdout match (w) <test1> True
+stdout match (w) </usr/bin/authselect> True
+# default authselect configuration is detected
+stdout match (w) <test2> True
+stdout match (w) <Profile ID: local> True
 ```
 
 # See also
